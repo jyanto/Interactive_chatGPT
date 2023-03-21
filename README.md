@@ -7,8 +7,8 @@ This app also provides two different LLM models from openAI:
 - gpt-3.5-turbo
 - text-davinci-003
 
-For using [this app](https://jyanto-interactive-chatgpt.streamlit.app/), please go directly to the link
-https://jyanto-interactive-chatgpt.streamlit.app/
+For using [this app](https://jyanto-interactive-ai-open-domain.streamlit.app/), please go directly to the link
+https://jyanto-interactive-ai-open-domain.streamlit.app/
 
 Instruction on generating indexing file to enable open domain:
 ```
