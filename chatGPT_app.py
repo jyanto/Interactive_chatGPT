@@ -70,7 +70,8 @@ def new_chat():
     st.session_state.conv_memory = []
 
 # Set the title
-st.title("chatGPT + Langchain + LlamaIndex")
+st.title("Interactive AI with Open Domain")
+st.subheader("chatGPT + Langchain + LlamaIndex")
 
 # Set the box to input api-key
 api = st.sidebar.text_input("API-Key", type='password')
@@ -81,9 +82,11 @@ llm_model = st.sidebar.selectbox(label='Model', options=['gpt-3.5-turbo', 'text-
 # Set the prompt memory for conversational
 prompt_memory = st.sidebar.number_input(label='Prompt memory', min_value=3, max_value=15)
 
+
+instruction = st.sidebar.caption("Please visit [this link](https://github.com/jyanto/Interactive_chatGPT) for generating indexing file instruction")
 # Set the data uploader for external database
 uploaded_data = st.sidebar.file_uploader(
-    "Upload indexing file (data in .json format)", accept_multiple_files=False
+    "Upload indexing file (data in .json format) (optional)", accept_multiple_files=False
 )
 uploaded = False # Set default to False (normal chatGPT without querying external data)
 
