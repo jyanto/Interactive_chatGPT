@@ -11,6 +11,8 @@ from langchain.agents import Tool
 from llama_index.optimization.optimizer import SentenceEmbeddingOptimizer
 from langchain.agents import initialize_agent
 import openai
+import os
+
 
 # Initialize session states
 if "generated" not in st.session_state:
@@ -75,6 +77,7 @@ st.subheader("chatGPT + Langchain + LlamaIndex")
 
 # Set the box to input api-key
 openai_api_key = st.sidebar.text_input("API-Key", type='password')
+os.environ['OPENAI_API_KEY'] = openai_api_key
 
 # Set the selectbox for user to select the llm model version
 llm_model = st.sidebar.selectbox(label='Model', options=['gpt-3.5-turbo', 'text-davinci-003'])
