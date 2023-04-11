@@ -74,7 +74,7 @@ st.title("Interactive AI with Open Domain")
 st.subheader("chatGPT + Langchain + LlamaIndex")
 
 # Set the box to input api-key
-api = st.sidebar.text_input("API-Key", type='password')
+openai_api_key = st.sidebar.text_input("API-Key", type='password')
 
 # Set the selectbox for user to select the llm model version
 llm_model = st.sidebar.selectbox(label='Model', options=['gpt-3.5-turbo', 'text-davinci-003'])
@@ -106,11 +106,11 @@ if uploaded_data:
             ]
     uploaded = True
 
-if api:
+if openai_api_key:
     #Setup the llm
     llm = OpenAI(
         temperature=0.5,
-        openai_api_key=api,
+        openai_api_key=openai_api_key,
         model_name = llm_model
     )
     if uploaded:
